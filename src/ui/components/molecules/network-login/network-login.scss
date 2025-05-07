@@ -1,0 +1,189 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.panel {
+  background: $ads-background-main;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  padding: 2.2rem;
+  width: 800px;
+
+  &--secondary {
+    background-color: $ads-secondary-main;
+    position: sticky;
+  }
+}
+
+.logo {
+  align-items: center;
+  background: transparent;
+  height: auto;
+  margin-inline: auto;
+  width: 400px;
+
+  .logo-icon {
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.button-google {
+  margin-bottom: 10px;
+  margin-inline: auto;
+}
+
+.button-facebook {
+  margin-inline: auto;
+}
+
+.button__label {
+  border-radius: 20px;
+  height: auto;
+  width: 500px;
+
+  &__text {
+    font-size: $ads-font-size-second;
+    font-weight: $ads-font-weight-first;
+  }
+
+  &__icon {
+    height: 35px;
+    width: 37px;
+  }
+}
+
+.panel--secondary .button__label {
+  background-color: $ads-text-main-hover;
+}
+
+.panel--secondary .logo g {
+  fill: $ads-tertiary-main;
+}
+
+// Media queries usando las resoluciones definidas
+
+@include respond-to('small') {
+  .panel {
+    /* Estilos específicos para 'small' (480px) */
+    width: 400px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 200px;
+  }
+
+  .button__label {
+    /* Ajustes para 'small' */
+    border-radius: 50px;
+    width: 190px;
+
+    .button__text {
+      font-size: $ads-font-size-sixth;
+    }
+
+    .button__icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+@include respond-to('small-mobile') {
+  .panel {
+    /* Estilos específicos para 'small-mobile' (320px) */
+    padding: 1.5rem;
+    width: auto;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 200px;
+  }
+
+  .button__label {
+    /* Ajustes para 'small-mobile' */
+    border-radius: 50px;
+    width: 190px;
+
+    .button__text {
+      font-size: $ads-font-size-sixth;
+    }
+
+    .button__icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+@include respond-to('medium') {
+  .panel {
+    width: 600px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 400px;
+  }
+
+  .button__label {
+    border-radius: 20px;
+    width: 300px;
+  }
+}
+
+@include respond-to('large-tablet') {
+  .panel {
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 300px;
+  }
+
+  .button__label {
+    border-radius: 20px;
+    width: 500px;
+  }
+}
+
+@include respond-to('large') {
+  .panel {
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 300px;
+  }
+
+  .button__label {
+    border-radius: 10px;
+    width: 400px;
+  }
+}
+
+@include respond-to('extra-large') {
+  .panel {
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 400px;
+  }
+
+  .button__label {
+    border-radius: 10px;
+    width: 500px;
+  }
+}
+
+.button__icon svg g path {
+  fill: $ads-background-main;
+}

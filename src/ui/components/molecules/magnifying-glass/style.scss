@@ -1,0 +1,32 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.glass {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.disguise {
+  background-color: transparent;
+  border: none;
+  margin-left: 94%;
+  margin-top: -0.4rem;
+}
+
+.button__icons--glass svg {
+  height: 1.125rem;
+  width: 1.125rem;
+
+  @include respond-to('medium') {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 2rem;
+    width: 2rem;
+  }
+}

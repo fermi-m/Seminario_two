@@ -1,0 +1,79 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.variable-button {
+  background: $ads-background-main;
+  border: none;
+  height: 3.3rem;
+  padding: 0.5rem;
+  width: 3rem;
+
+  @include respond-to('small') {
+    background: $ads-background-main;
+    height: 3.7rem;
+    padding: 0.5rem;
+    width: 3.3rem;
+  }
+
+  @include respond-to('medium') {
+    background: $ads-primary-main;
+    height: 4.5rem;
+    padding: 0.7rem;
+    width: 4rem;
+  }
+
+  @include respond-to('large') {
+    background: $ads-primary-main;
+    height: 5.5rem;
+    padding: 0.85rem;
+    width: 5rem;
+  }
+
+  @include respond-to('extra-large') {
+    background: $ads-primary-main;
+    height: 6rem;
+    padding: 1rem;
+    width: 5.2rem;
+  }
+}
+
+.button-icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .button-icon svg {
+    @include respond-to('small-mobile') {
+      min-height: 2.2rem;
+      min-width: 1.7rem;
+    }
+
+    @include respond-to('medium') {
+      min-height: 3.1rem;
+      min-width: 2.6rem;
+    }
+
+    @include respond-to('large') {
+      min-height: 3.7rem;
+      min-width: 3.2rem;
+    }
+  }
+}
+
+.button-icon g path {
+  fill: $ads-primary-main;
+
+  @include respond-to('medium') {
+    fill: $ads-color-main;
+  }
+}
+
+.variable-button:hover {
+  background: $ads-text-main;
+
+  .button-icon g path {
+    @include respond-to('small-mobile') {
+      fill: $ads-color-main;
+    }
+  }
+}

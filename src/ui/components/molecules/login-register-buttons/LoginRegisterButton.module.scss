@@ -1,0 +1,7 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}

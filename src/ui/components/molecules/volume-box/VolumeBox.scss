@@ -1,0 +1,66 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.volume-box {
+  align-items: center;
+  background-color: $ads-tertiary-main;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  height: auto;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  position: relative;
+
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+  }
+
+  &.custom-label-date-color {
+    .volumen {
+      font-size: 0.75rem;
+      text-transform: capitalize;
+    }
+
+    .labeldate,
+    .separator,
+    .custom-labeldate {
+      color: $ads-text-main;
+      font-family: Roboto, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      line-height: 0.88rem;
+      opacity: 1;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $ads-text-main-hover;
+      }
+    }
+  }
+
+  @include respond-to('medium'){
+    min-width: 26.25rem;
+
+    .content {
+      .labeldate,
+      .separator,
+      .volumen,
+      .custom-labeldate {
+        font-size: 1.5rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}

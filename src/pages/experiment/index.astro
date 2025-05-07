@@ -1,0 +1,10 @@
+---
+import { SenderComponent } from 'ui/components/molecules/experiment-pubsub/sender-component';
+import { ReceiveComponent } from 'ui/components/molecules/experiment-pubsub/receive-component';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Iniciar Sesion">
+  <ReceiveComponent client:only />
+  <SenderComponent client:only />
+</Layout>

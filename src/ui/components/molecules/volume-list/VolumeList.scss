@@ -1,0 +1,78 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.volume-list__container {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include respond-to('medium') {
+    padding-left: 4.375rem;
+    padding-right: 4.375rem;
+  }
+}
+
+.volume-list {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond-to('medium') {
+    column-gap: 4.375rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.volume-list__item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to('medium') {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+
+.volume-list-thumbnail {
+  display: flex;
+  height: 14rem;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    object-fit: contain;
+    width: 8rem;
+
+    @include respond-to('medium') {
+      width: 10.563rem;
+    }
+
+    @include respond-to('large') {
+      width: 21.313rem;
+    }
+  }
+
+  @include respond-to('medium') {
+    height: 16rem;
+  }
+
+  @include respond-to('large') {
+    height: 32.25rem;
+  }
+}
+
+.volume-list__title {
+  color: $ads-text-main;
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.875rem;
+  justify-content: center;
+  line-height: 2.286rem;
+  text-transform: uppercase;
+
+  @include respond-to('medium') {
+    font-size: 4rem;
+    line-height: 4.876rem;
+  }
+}
