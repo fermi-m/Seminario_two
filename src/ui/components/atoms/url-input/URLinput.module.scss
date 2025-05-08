@@ -1,0 +1,277 @@
+@import "../../../../globals/variables";
+
+.container {
+    width: 20%;
+    font-family: inherit;
+    color: #000000; // Color de texto principal negro
+}
+
+/* HEADER STYLES */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.labelWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.labelIcon {
+    width: 16px;
+    height: 16px;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.labelText {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.closeIcon {
+    width: 16px;
+    height: 16px;
+    color: $ads-danger-main;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+/* INPUT CONTAINER */
+.inputContainer {
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    background: white;
+    width: 100%;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.inputIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.protocol {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.divider {
+    color: $ads-default-blur-main;
+    margin: 0 4px;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 8px 0;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+}
+
+.copyButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+/* FOOTER STYLES */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.hintText {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.infoIcon {
+    width: 14px;
+    height: 14px;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.standaloneInfoIcon {
+    width: 14px;
+    height: 14px;
+
+    path {
+        fill: #000000; // Siempre negro
+    }
+}
+
+/* VARIANT STYLES */
+.variant--default {
+    .inputContainer {
+        border-color: #000000;
+    }
+
+    .copyButton {
+        background: $ads-default-main; // #7A44FF
+        color: white;
+    }
+}
+
+.variant--focus {
+    .inputContainer {
+        border-color: $ads-default-main;
+        box-shadow: 0 0 0 2px $ads-default-blur-main; // #E4DAFF
+    }
+
+    .copyButton {
+        background: $ads-default-main;
+        color: white;
+    }
+}
+
+.variant--error {
+    color: $ads-error-main; // #FF554A
+
+    .inputContainer {
+        border-color: $ads-error-main;
+    }
+
+    .copyButton {
+        background: $ads-error-main;
+        color: white;
+    }
+
+    .hintText {
+        color: $ads-error-main;
+    }
+}
+
+.variant--disabled {
+    color: $ads-disabled-main; // #BCC3E3
+
+    .inputContainer {
+        border-color: $ads-disabled-main;
+    }
+
+    .copyButton {
+        background: $ads-disabled-main;
+        color: white;
+    }
+
+    .input {
+        color: $ads-disabled-main;
+    }
+}
+
+/* SIZE STYLES */
+.size--small {
+    .inputContainer {
+        height: 32px;
+    }
+
+    .input,
+    .protocol,
+    .copyButton {
+        font-size: 12px;
+    }
+}
+
+.size--medium {
+    .inputContainer {
+        height: 40px;
+    }
+
+    .input,
+    .protocol,
+    .copyButton {
+        font-size: 14px;
+    }
+}
+
+.size--large {
+    .inputContainer {
+        height: 48px;
+    }
+
+    .input,
+    .protocol,
+    .copyButton {
+        font-size: 16px;
+    }
+}
+
+/* BORDER RADIUS STYLES */
+.radius--none {
+    .inputContainer {
+        border-radius: 0;
+    }
+}
+
+.radius--small {
+    .inputContainer {
+        border-radius: 4px; // ~10%
+    }
+}
+
+.radius--full {
+    .inputContainer {
+        border-radius: 999px; // 50%
+    }
+}
