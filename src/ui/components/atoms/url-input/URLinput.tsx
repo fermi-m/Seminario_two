@@ -38,24 +38,24 @@ function URLInput(props: IProps) {
                     <Icon src={PlanetIcon} className={styles.labelIcon} />
                     <span className={styles.labelText}>{label}</span>
                 </div>
-                <button className={styles.closeButton} onClick={onCloseClick}>
-                    <Icon src={CloseIcon} className={styles.closeIcon} />
-                </button>
+                <Icon src={CloseIcon} className={styles.closeIconURl} />
             </div>
             <div className={styles.inputContainer}>
                 <div className={styles.inputWrapper}>
                     <Icon src={PlanetIcon} className={styles.planetIcon} />
                     <span className={styles.protocol}>https://</span>
                     <span className={styles.divider}>|</span>
-
-                    <input
-                        type="text"
-                        value={value}
-                        onChange={(e) => onChange(e.target.value)}
-                        placeholder={placeholder}
-                        disabled={variant === 'disabled'}
-                        className={styles.input}
-                    />
+                    <div className={styles.inputGroup}>
+                        <Icon src={PlanetIcon} className={styles.inputIcon} />
+                        <input
+                            type="text"
+                            value={value}
+                            onChange={(e) => onChange(e.target.value)}
+                            placeholder={placeholder}
+                            disabled={variant === 'disabled'}
+                            className={styles.input}
+                        />
+                    </div>
 
                     <button
                         className={styles.copyButton}
@@ -78,7 +78,7 @@ function URLInput(props: IProps) {
                 {showHintText && (
                     <div className={styles.hintText}>
                         <Icon src={InfoIcon} className={styles.infoIcon} />
-                        <span>{hintText}</span>
+                        <span className={styles.hintText}>{hintText}</span>
                     </div>
                 )}
                 <Icon src={InfoIcon} className={styles.standaloneInfoIcon} />

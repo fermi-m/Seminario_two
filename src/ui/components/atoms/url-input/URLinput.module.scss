@@ -1,9 +1,8 @@
 @import "../../../../globals/variables";
 
 .container {
-    width: 20%;
-    font-family: inherit;
-    color: #000000; // Color de texto principal negro
+    width: 22rem;
+    color: $ads-text-main-hover;
 }
 
 /* HEADER STYLES */
@@ -11,28 +10,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: .5rem;
 }
 
 .labelWrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: .3rem;
 }
 
 .labelIcon {
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
 
     path {
         fill: currentColor;
     }
 }
 
-.labelText {
-    font-weight: 500;
-    font-size: 14px;
-}
 
 .closeButton {
     background: none;
@@ -45,15 +40,14 @@
     }
 }
 
-.closeIcon {
-    width: 16px;
-    height: 16px;
-    color: $ads-danger-main;
-
+.closeIconURl {
+    width: 1rem;
+    height: 1rem;
     path {
         fill: currentColor;
     }
 }
+
 
 /* INPUT CONTAINER */
 .inputContainer {
@@ -61,7 +55,6 @@
     display: flex;
     align-items: center;
     transition: all 0.2s ease;
-    background: white;
     width: 100%;
 }
 
@@ -69,13 +62,14 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 12px;
+    padding-left: 1rem;
+    padding-right: 0.2rem;
 }
 
-.inputIcon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+.planetIcon {
+    width: 1.1rem;
+    height: 1rem;
+    margin-right: 0.2rem;
 
     path {
         fill: currentColor;
@@ -83,22 +77,18 @@
 }
 
 .protocol {
-    font-size: 14px;
-    margin-right: 4px;
+    font-size: .3rem;
 }
 
 .divider {
-    color: $ads-default-blur-main;
-    margin: 0 4px;
+    color: $ads-disabled-main;
+    margin: 0 .4rem;
 }
 
 .input {
-    flex: 1;
     border: none;
     outline: none;
     background: transparent;
-    font-size: 14px;
-    padding: 8px 0;
 
     &:disabled {
         cursor: not-allowed;
@@ -109,13 +99,11 @@
 .copyButton {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    margin-left: 8px;
+    gap: .2rem;
+    padding: .55rem 1rem;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: .3rem;
     font-weight: 500;
     transition: all 0.2s ease;
 
@@ -140,13 +128,13 @@
 .hintText {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12px;
+    gap: .5rem;
+    font-size: .8rem;
 }
 
 .infoIcon {
-    width: 14px;
-    height: 14px;
+    width: 1rem;
+    height: 1rem;
 
     path {
         fill: currentColor;
@@ -154,40 +142,39 @@
 }
 
 .standaloneInfoIcon {
-    width: 14px;
-    height: 14px;
+    width: 1rem;
+    height: 1rem;
 
     path {
-        fill: #000000; // Siempre negro
+        fill: $ads-text-main-hover
     }
 }
 
 /* VARIANT STYLES */
 .variant--default {
     .inputContainer {
-        border-color: #000000;
+        border-color: $ads-text-main-hover;
     }
 
     .copyButton {
-        background: $ads-default-main; // #7A44FF
-        color: white;
+        background: $ads-default-main;
+        color: $ads-background-main;
     }
 }
 
 .variant--focus {
     .inputContainer {
         border-color: $ads-default-main;
-        box-shadow: 0 0 0 2px $ads-default-blur-main; // #E4DAFF
+        box-shadow: 0 0 0 .1rem $ads-default-blur-main;
     }
 
     .copyButton {
         background: $ads-default-main;
-        color: white;
+        color: $ads-background-main;
     }
 }
 
 .variant--error {
-    color: $ads-error-main; // #FF554A
 
     .inputContainer {
         border-color: $ads-error-main;
@@ -203,8 +190,55 @@
     }
 }
 
+.inputGroup {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+    &:disabled {
+        cursor: not-allowed;
+    }
+    .inputIcon {
+        position: absolute;
+        left: 0.2rem;
+        z-index: 2;
+        width: 1rem;
+        height: 1rem;
+
+        path {
+            fill: currentColor;
+        }
+    }
+
+    .input {
+        width: 100%;
+        padding-left: 1.7rem;
+        padding-right: 1.5rem;
+        border: none;
+        outline: none;
+        color: $ads-text-main-hover;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.Iconplanet {
+    width: 1rem;
+    height: 1rem;
+    path {
+        fill: currentColor;
+    }
+}
+
+.copyIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
 .variant--disabled {
-    color: $ads-disabled-main; // #BCC3E3
+    color: $ads-disabled-main;
 
     .inputContainer {
         border-color: $ads-disabled-main;
@@ -212,10 +246,18 @@
 
     .copyButton {
         background: $ads-disabled-main;
-        color: white;
+        color: $ads-background-main;
     }
 
     .input {
+        color: $ads-disabled-main;
+    }
+
+    .planetIcon {
+        color: $ads-disabled-main;
+    }
+
+    .closeIconURl{
         color: $ads-disabled-main;
     }
 }
@@ -223,13 +265,15 @@
 /* SIZE STYLES */
 .size--small {
     .inputContainer {
-        height: 32px;
+        height: 2.4rem;
     }
 
     .input,
     .protocol,
+    .labelText,
+    .hintText,
     .copyButton {
-        font-size: 12px;
+        font-size: .8rem;
     }
 }
 
@@ -240,21 +284,26 @@
 
     .input,
     .protocol,
+    .labelText,
+    .hintText,
     .copyButton {
-        font-size: 14px;
+        font-size: .85rem;
     }
 }
 
 .size--large {
     .inputContainer {
-        height: 48px;
+        height: 2.6rem;
     }
 
     .input,
     .protocol,
+    .labelText,
+    .hintText,
     .copyButton {
-        font-size: 16px;
+        font-size: .9rem;
     }
+
 }
 
 /* BORDER RADIUS STYLES */
@@ -262,16 +311,28 @@
     .inputContainer {
         border-radius: 0;
     }
+
+    .copyButton {
+        border-radius: 0;
+    }
 }
 
 .radius--small {
     .inputContainer {
-        border-radius: 4px; // ~10%
+        border-radius: .3rem;
+    }
+
+    .copyButton {
+        border-radius: 5%;
     }
 }
 
 .radius--full {
     .inputContainer {
-        border-radius: 999px; // 50%
+        border-radius: 40rem;
+    }
+
+    .copyButton {
+        border-radius: 5rem;
     }
 }
