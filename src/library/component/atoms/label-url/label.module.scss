@@ -1,0 +1,24 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+.label-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Poppins-Light, sans-serif;
+  font-weight: $ads-font-weight-third;
+  color: $ads-text-main-hover;
+  font-size: 0.85rem;
+}
+
+.variant-default {
+  color: $ads-text-main-hover;
+}
+
+.variant-disabled {
+  color: $ads-color-gray-strong-25;
+  cursor: not-allowed;
+  user-select: none;
+}

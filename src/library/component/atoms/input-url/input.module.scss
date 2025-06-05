@@ -1,0 +1,148 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+/*.container {
+  box-sizing: border-box;
+  color: $ads-text-main-hover;
+  font-family: Poppins-Light, sans-serif;
+  width: 22rem;
+
+  @include respond-to('extra-large') {
+    min-width: 0;
+    width: 27%;
+  }
+}*/
+
+.input-container {
+  align-items: center;
+  border: 0.063rem solid;
+  box-sizing: border-box;
+  display: flex;
+  transition: all 0.2s ease;
+  max-width: 22rem;
+
+  @include respond-to('small') {
+    width: 100%;
+    min-width: 0;
+  }
+
+  @include respond-to('extra-large') {
+    min-width: 0;
+    width: 100%;
+  }
+
+}
+
+.variant--default {
+  border-color: $ads-text-main-hover;
+  color: $ads-text-main-hover;
+}
+
+.variant--focus {
+  border-color: $ads-color-primary;
+  box-shadow: 0 0 0 0.1rem $ads-color-brand-primary-100;
+  color: $ads-text-main-hover;
+}
+
+.variant--error {
+  border-color: $ads-color-negative;
+  color: $ads-text-main-hover;
+}
+
+.variant--disabled {
+  color: $ads-color-gray-strong-25;
+  border-color: $ads-color-gray-strong-25;
+
+  .planet-icon,
+  .protocol,
+  .divider,
+  .input {
+    color: $ads-color-gray-strong-25;
+    cursor: not-allowed;
+  }
+}
+
+.size--small {
+  height: 2.4rem;
+
+  .input,
+  .protocol {
+    font-size: 0.8rem;
+  }
+}
+
+.size--medium {
+  height: 2.5rem;
+
+  .input,
+  .protocol {
+    font-size: 0.85rem;
+  }
+}
+
+.size--large {
+  height: 2.6rem;
+
+  .input,
+  .protocol {
+    font-size: 0.9rem;
+  }
+}
+
+.radius--none {
+  border-radius: 0;
+}
+
+.radius--small {
+  border-radius: 0.3rem;
+}
+
+.radius--full {
+  border-radius: 40rem;
+}
+
+.input-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 0.15rem;
+  width: 100%;
+}
+
+.planet-icon {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+
+  path {
+    fill: currentcolor;
+  }
+}
+
+.protocol {
+  font-size: 0.3rem;
+  font-weight: $ads-font-weight-first;
+}
+
+.divider {
+  background-color: currentColor;
+  border-left: 0.01rem solid currentColor;
+  height: 100%;
+  margin: 0 0.4rem;
+  width: 0.063rem;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: Poppins-Light, sans-serif;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}

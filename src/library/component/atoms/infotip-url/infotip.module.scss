@@ -1,0 +1,46 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+.info-icon {
+  cursor: pointer;
+  color: $ads-text-main-hover;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+
+  &.variant-default {
+    color: $ads-text-main-hover;
+  }
+
+  &.variant-error {
+    color: $ads-color-negative;
+  }
+
+  &.variant-disabled {
+    color: $ads-color-gray-strong-25;
+    //cursor: default;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.size-small {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.size-medium {
+  font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.size-large {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}

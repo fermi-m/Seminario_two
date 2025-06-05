@@ -1,0 +1,80 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.55rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  color: $ads-background-main;
+  background-color: $ads-color-primary;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: $ads-color-gray-strong-25;
+    color: $ads-background-main;
+  }
+}
+
+.variant-default {
+  background-color: $ads-color-primary;
+  color: $ads-background-main;
+}
+
+.variant-focus {
+  background-color: $ads-color-primary;
+  box-shadow: 0 0 0 0.1rem $ads-color-brand-primary-100;
+  color: $ads-background-main;
+}
+
+.variant-error {
+  background-color: $ads-color-negative;
+  color: $ads-background-main;
+}
+
+.variant-disabled {
+  background-color: $ads-color-gray-strong-25;
+  color: $ads-background-main;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.size-small {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.size-medium {
+  font-size: 0.9rem;
+  padding: 0.55rem 1rem;
+}
+
+.size-large {
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+}
+
+.radius-none {
+  border-radius: 0;
+}
+
+.radius-small {
+  border-radius: 0.3rem;
+}
+
+.radius-full {
+  border-radius: 40rem;
+}
