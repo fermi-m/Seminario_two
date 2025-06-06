@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InfoTip } from './infotip'; 
+import { InfoTip } from './infotip';
 
 const meta: Meta<typeof InfoTip> = {
   title: 'Atoms/InfoTipUrl',

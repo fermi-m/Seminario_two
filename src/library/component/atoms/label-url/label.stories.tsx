@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { LabelInput } from './label';
 
 const meta: Meta<typeof LabelInput> = {
@@ -30,4 +29,3 @@ export const Disabled: Story = {
     variant: 'disabled',
   },
 };
-

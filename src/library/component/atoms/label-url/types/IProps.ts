@@ -6,4 +6,3 @@ export interface LabelProps {
   variant?: Variant;
   className?: string;
 }
-

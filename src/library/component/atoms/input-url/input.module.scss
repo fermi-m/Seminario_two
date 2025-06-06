@@ -3,36 +3,57 @@
 @import '../../../../globals/fonts';
 @import '../../../../globals/breakpoints';
 
-/*.container {
-  box-sizing: border-box;
-  color: $ads-text-main-hover;
-  font-family: Poppins-Light, sans-serif;
-  width: 22rem;
-
-  @include respond-to('extra-large') {
-    min-width: 0;
-    width: 27%;
-  }
-}*/
-
 .input-container {
   align-items: center;
   border: 0.063rem solid;
   box-sizing: border-box;
   display: flex;
-  transition: all 0.2s ease;
   max-width: 22rem;
+  transition: all 0.2s ease;
 
   @include respond-to('small') {
-    width: 100%;
     min-width: 0;
+    width: 100%;
   }
 
   @include respond-to('extra-large') {
     min-width: 0;
     width: 100%;
   }
+}
 
+.planet-icon {
+  height: 1rem;
+  margin-right: 0.5rem;
+  width: 1rem;
+
+  path {
+    fill: currentcolor;
+  }
+}
+
+.protocol {
+  font-size: 0.3rem;
+  font-weight: $ads-font-weight-first;
+}
+
+.divider {
+  border-left: 0.01rem solid currentcolor;
+  height: 100%;
+  margin: 0 0.4rem;
+  width: 0.063rem;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  font-family: Poppins-Light, sans-serif;
+  outline: none;
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 }
 
 .variant--default {
@@ -52,8 +73,8 @@
 }
 
 .variant--disabled {
-  color: $ads-color-gray-strong-25;
   border-color: $ads-color-gray-strong-25;
+  color: $ads-color-gray-strong-25;
 
   .planet-icon,
   .protocol,
@@ -110,39 +131,4 @@
   padding-left: 1rem;
   padding-right: 0.15rem;
   width: 100%;
-}
-
-.planet-icon {
-  height: 1rem;
-  width: 1rem;
-  margin-right: 0.5rem;
-
-  path {
-    fill: currentcolor;
-  }
-}
-
-.protocol {
-  font-size: 0.3rem;
-  font-weight: $ads-font-weight-first;
-}
-
-.divider {
-  background-color: currentColor;
-  border-left: 0.01rem solid currentColor;
-  height: 100%;
-  margin: 0 0.4rem;
-  width: 0.063rem;
-}
-
-.input {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: Poppins-Light, sans-serif;
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
 }

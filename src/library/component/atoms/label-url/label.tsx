@@ -1,25 +1,24 @@
-import React from 'react';
 import { Typography } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
+
 import type { LabelProps, Variant } from './types/IProps';
 import styles from './label.module.scss';
-import clsx from 'clsx';
 
 const variantClassMap: Record<Variant, string> = {
   default: styles['variant-default'],
   disabled: styles['variant-disabled'],
 };
 
-export const LabelInput: React.FC<LabelProps> = ({
-  text,
-  htmlFor,
-  variant = 'default',
-  className = '',
-}) => {
+// Función simple para concatenar clases
+function classNames(...classes: (string | undefined)[]) {
+  return classes.filter(Boolean).join(' ');
+}
+
+export function LabelInput({ text, htmlFor, variant = 'default', className = '' }: LabelProps) {
   return (
     <label
-      //htmlFor={htmlFor}
-      className={clsx(styles['label-container'], variantClassMap[variant], className)}
+      htmlFor={htmlFor}
+      className={classNames(styles['label-container'], variantClassMap[variant], className)}
     >
       <LanguageIcon
         fontSize="small"
@@ -35,4 +34,4 @@ export const LabelInput: React.FC<LabelProps> = ({
       </Typography>
     </label>
   );
-};
+}

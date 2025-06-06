@@ -44,4 +44,3 @@ describe('InputUrl Component', () => {
     expect(container).toHaveClass('variant--disabled');
   });
 });
-

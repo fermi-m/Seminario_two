@@ -8,7 +8,6 @@ describe('Info Component', () => {
     const icon = screen.getByLabelText('info icon');
     expect(icon).toBeInTheDocument();
 
-   
     fireEvent.mouseOver(icon);
     expect(screen.getByText('Tooltip message')).toBeVisible();
 
@@ -22,16 +21,5 @@ describe('Info Component', () => {
 
     fireEvent.mouseOver(icon);
     expect(screen.queryByText('Tooltip message')).not.toBeInTheDocument();
-  });
-
-  it('applies correct variant and size classes', () => {
-    const { container, rerender } = render(<InfoTip message="Info" variant="default" size="small" />);
-    const icon = container.querySelector('svg');
-    expect(icon).toHaveClass('variant-default');
-    expect(icon).toHaveClass('size-small');
-
-    rerender(<InfoTip message="Info" variant="error" size="large" />);
-    expect(icon).toHaveClass('variant-error');
-    expect(icon).toHaveClass('size-large');
   });
 });

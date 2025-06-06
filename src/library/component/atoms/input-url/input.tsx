@@ -1,9 +1,12 @@
-import React from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
 import Divider from '@mui/material/Divider';
 import type { InputUrlProps, Variant, Size, BorderRadius } from './types/IProps';
 import styles from './input.module.scss';
-import clsx from 'clsx';
+
+// Función local para concatenar clases
+function classNames(...classes: (string | false | undefined | null)[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 const variantClassMap: Record<Variant, string> = {
   default: styles['variant--default'],
@@ -24,7 +27,7 @@ const radiusClassMap: Record<BorderRadius, string> = {
   full: styles['radius--full'],
 };
 
-export const InputUrl: React.FC<InputUrlProps> = ({
+export function InputUrl({
   value,
   onChange,
   placeholder = 'example.com',
@@ -33,8 +36,8 @@ export const InputUrl: React.FC<InputUrlProps> = ({
   size = 'medium',
   borderRadius = 'small',
   className = '',
-}) => {
-  const containerClass = clsx(
+}: InputUrlProps) {
+  const containerClass = classNames(
     styles['input-container'],
     variantClassMap[variant],
     sizeClassMap[size],
@@ -50,14 +53,9 @@ export const InputUrl: React.FC<InputUrlProps> = ({
           aria-hidden="true"
           color={variant === 'disabled' ? 'disabled' : 'inherit'}
         />
-        <span className={styles['protocol']}>https://</span>
+        <span className={styles.protocol}>https://</span>
 
-        <Divider
-          orientation="vertical"
-          flexItem
-          className={styles['divider']}
-          aria-hidden="true"
-        />
+        <Divider orientation="vertical" flexItem className={styles.divider} aria-hidden="true" />
 
         <LanguageIcon
           className={styles['planet-icon']}
@@ -67,9 +65,11 @@ export const InputUrl: React.FC<InputUrlProps> = ({
 
         <input
           type="text"
-          className={styles['input']}
+          className={styles.input}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
           placeholder={placeholder}
           disabled={disabled || variant === 'disabled'}
           aria-disabled={disabled || variant === 'disabled'}
@@ -78,4 +78,4 @@ export const InputUrl: React.FC<InputUrlProps> = ({
       </div>
     </div>
   );
-};
+}

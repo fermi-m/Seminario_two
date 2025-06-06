@@ -1,8 +1,11 @@
 import { Button as MuiButton } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import type { ButtonProps } from './types/IProps';
 import styles from './button.module.scss';
-import clsx from 'clsx';
+import type { ButtonProps } from './types/IProps';
+
+function classNames(...classes: (string | false | undefined | null)[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 export function ButtonCopy({
   onClick,
@@ -42,13 +45,7 @@ export function ButtonCopy({
       startIcon={showIcon ? <ContentCopyIcon fontSize="small" /> : undefined}
       size={size}
       disableElevation
-      className={clsx(
-        styles['copy-button'],
-        variantClass,
-        sizeClass,
-        radiusClass,
-        className,
-      )}
+      className={classNames(styles['copy-button'], variantClass, sizeClass, radiusClass, className)}
     >
       {label}
     </MuiButton>
